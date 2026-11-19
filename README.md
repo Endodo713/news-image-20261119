@@ -1,8 +1,20 @@
 # The World in One Day — Thursday, 19 November 2026
 
+<p align="center">
+
+  <a href="https://make.fun"><img src="https://make.fun/badge/news-image-20261119.svg" alt="make.fun competition badge for news-image-20261119"></a><br>
+
+  <a href="https://make.fun/bounty/news-image-20261119"><img src="https://make.fun/badge/news-image-20261119/Endodo713/news-image-20261119/rank.svg" alt="rank badge"></a>
+
+  <a href="https://make.fun/bounty/news-image-20261119"><img src="https://make.fun/badge/news-image-20261119/Endodo713/news-image-20261119/reward.svg" alt="reward badge"></a>
+
+</p>
+
 A 1024×1024 newspaper poster carrying **100 poster-ready stories for one day**:
 6 hero stories with full summaries, 94 numbered index one-liners, an 8-item UTC
 timeline strip, a drawn world map with 12 pins and a date-check box.
+
+Built for the [make.fun](https://make.fun) competition [`news-image-20261119`](https://make.fun/bounty/news-image-20261119).
 
 ## Files
 
