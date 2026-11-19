@@ -1,255 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=1024, height=1024">
-<title>The World in One Day — Thursday, 19 November 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The World in One Day &mdash; Thursday, 19 November 2026</title>
 <style>
-:root{
-  --paper:#f6f1e4;
-  --paper-deep:#eee7d4;
-  --ink:#1b1611;
-  --ink-soft:#41382e;
-  --red:#9d2b1f;
-  --slate:#2f4f5e;
-  --gold:#a8801f;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-html,body{width:1024px;height:1024px;overflow:hidden;}
-body{
-  font-family:"DejaVu Serif","Liberation Serif",Georgia,"Times New Roman",serif;
-  background:var(--ink);
-  color:var(--ink);
-  -webkit-font-smoothing:antialiased;
-}
-.page{
-  width:1024px;height:1024px;
-  background:var(--paper);
-  padding:18px 26px 14px;
-  display:flex;flex-direction:column;gap:8px;
-  overflow:hidden;
-}
-.masthead{flex:0 0 auto;height:120px;display:flex;flex-direction:column;justify-content:center;}
-.mh-meta{
-  display:flex;justify-content:space-between;align-items:baseline;
-  font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--ink-soft);border-bottom:1px solid var(--ink);padding-bottom:4px;
-}
-.mh-title{
-  font-size:47px;line-height:1.04;font-weight:700;letter-spacing:.012em;
-  text-align:center;text-transform:uppercase;margin:3px 0 4px;
-}
-.mh-date{
-  display:flex;align-items:center;justify-content:center;gap:14px;
-  border-top:3px double var(--ink);border-bottom:1px solid var(--ink);
-  padding:4px 0;
-}
-.mh-date .rule{flex:1;height:1px;background:var(--ink);opacity:.45;}
-.mh-date .txt{
-  font-size:19px;font-weight:700;letter-spacing:.22em;
-  text-transform:uppercase;white-space:nowrap;
-}
-.mh-tag{
-  text-align:center;font-size:11.5px;font-style:italic;
-  color:var(--ink-soft);letter-spacing:.06em;margin-top:5px;
-}
-
-.hero{
-  flex:0 0 auto;height:202px;display:flex;gap:14px;
-  border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
-  padding:8px 0;
-}
-.hero-body{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:5px;}
-.hero-kicker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);}
-.hero-headline{font-size:30px;line-height:1.1;font-weight:700;}
-.hero-cap{font-size:13px;line-height:1.45;color:var(--ink-soft);}
-.hero-art{flex:0 0 208px;align-self:stretch;display:flex;align-items:center;justify-content:center;background:var(--paper-deep);border:1px solid var(--ink);}
-
-.kicker{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);}
-.grid{flex:1 1 auto;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(0,1fr);gap:10px 12px;}
-.card{border:1px solid var(--ink);background:#fbf8ef;display:flex;gap:10px;padding:9px;min-height:0;overflow:hidden;}
-.card-art{flex:0 0 112px;display:flex;align-items:center;justify-content:center;background:var(--paper-deep);border:1px solid rgba(27,22,17,.5);}
-.card-body{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:4px;}
-.card-headline{font-size:17px;line-height:1.14;font-weight:700;}
-.card-cap{font-size:11.5px;line-height:1.4;color:var(--ink-soft);}
-
-.strip{flex:0 0 auto;height:114px;display:flex;gap:12px;padding:9px 11px;border:1px solid var(--ink);border-top:3px solid var(--ink);background:#fbf8ef;}
-.strip-art{flex:0 0 122px;display:flex;align-items:center;justify-content:center;background:var(--paper-deep);border:1px solid rgba(27,22,17,.5);}
-.strip-body{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:4px;}
-.strip-headline{font-size:18px;line-height:1.14;font-weight:700;}
-.strip-cap{font-size:12px;line-height:1.4;color:var(--ink-soft);}
-
-.footer{
-  flex:0 0 auto;height:30px;display:flex;align-items:center;justify-content:space-between;
-  gap:12px;border-top:1px solid var(--ink);
-  font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);
-}
-.footer .ft-strong{font-weight:700;color:var(--ink);}
+:root { --paper:#F7F2E7; --panel:#ECE6DB; --ink:#1E1C19; --red:#B02020; --blue:#184484; --land:#D6D0C3; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #2b2925; color: var(--ink);
+       font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; }
+.poster { max-width: 1024px; margin: 0 auto; background: var(--paper); padding: 14px 20px 18px;
+          border-top: 3px solid var(--ink); }
+.masthead { text-align: center; border-bottom: 2px solid var(--red); padding-bottom: 8px; }
+.paper-name { font-family: "Gloock", Georgia, "Times New Roman", serif; font-size: 21px;
+              letter-spacing: 2.4px; }
+.edition { font-size: 11px; letter-spacing: 1px; margin-top: 4px; }
+.dateline { font-family: "Gloock", Georgia, serif; font-size: 54px; line-height: 1.05;
+            letter-spacing: 3.2px; margin-top: 6px; }
+.heroes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+          margin-top: 12px; }
+.hero { background: var(--panel); border: 1px solid var(--ink); border-left: 4px solid var(--blue);
+        padding: 10px 12px; }
+.hero.war { border-left-color: var(--red); }
+.hero .tag { color: var(--blue); font-weight: 700; font-size: 10px; letter-spacing: .6px; }
+.hero h2 { font-family: "Gloock", Georgia, serif; font-size: 19px; line-height: 1.24;
+           margin: 4px 0 8px; }
+.hero p { font-size: 12px; line-height: 1.5; margin: 0; }
+.band { margin-top: 14px; border-top: 2px solid var(--ink); padding-top: 6px; }
+.band h3 { margin: 0 0 6px; font-size: 12px; letter-spacing: 1.2px; color: var(--red); }
+.timeline { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; list-style: none;
+            margin: 0; padding: 0; }
+.timeline .t { display: block; color: var(--blue); font-weight: 700; font-size: 12px; }
+.timeline .txt { display: block; font-size: 11px; line-height: 1.35; }
+.maprow { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-top: 14px; }
+.mapbox, .datecheck { border: 1px solid var(--ink); padding: 8px; }
+.mapbox h3, .datecheck h3 { color: var(--red); }
+.datecheck .bar { height: 8px; background: #D1CBCD; margin: 8px 0 4px; }
+.datecheck .bar i { display: block; height: 100%; width: 88.5%; background: var(--ink); }
+.datecheck ol { margin: 6px 0 0; padding-left: 18px; font-size: 11.5px; line-height: 1.6; }
+.datecheck li b { color: var(--blue); }
+.index { columns: 6; column-gap: 8px; margin-top: 14px; border-top: 2px solid var(--ink);
+         padding-top: 8px; }
+.index h4 { font-size: 11px; color: var(--red); letter-spacing: 1px; margin: 0 0 4px;
+            border-bottom: 1px solid var(--red); break-after: avoid; }
+.index ol { list-style: none; margin: 0 0 8px; padding: 0; font-size: 11.5px;
+            line-height: 1.45; }
+.index li { margin-bottom: 3px; }
+.index li b { color: var(--red); }
+.all100 { columns: 2; column-gap: 24px; margin-top: 16px; border-top: 2px solid var(--ink);
+          padding-top: 8px; }
+.all100 ol { list-style: none; margin: 0; padding: 0; font-size: 12px; line-height: 1.5; }
+.all100 li { margin-bottom: 3px; }
+.all100 .k { color: var(--blue); font-weight: 700; }
+footer { margin-top: 14px; border-top: 1px solid var(--ink); padding-top: 6px;
+         font-size: 10px; letter-spacing: .4px; display: flex; justify-content: space-between; }
+.pin { fill: var(--red); } .lab { font-size: 5.4px; fill: var(--ink); }
+.lab .n { fill: var(--red); font-weight: 700; } .land { fill: var(--land); }
 </style>
 </head>
 <body>
-<div class="page">
-  <header class="masthead">
-    <div class="mh-meta">
-      <span>World Edition</span>
-      <span>Thursday, 19 November 2026</span>
-      <span>Price: one picture</span>
-    </div>
-    <h1 class="mh-title">The World in One Day</h1>
-    <div class="mh-date">
-      <span class="rule"></span>
-      <span class="txt">Thursday, 19 November 2026</span>
-      <span class="rule"></span>
-    </div>
-    <div class="mh-tag">Six stories from around the world, as reported on 19 November</div>
-  </header>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="hero-kicker">Diplomacy &middot; APEC &middot; Shenzhen</div>
-      <h2 class="hero-headline">Xi greets Trump and Putin at APEC before historic summit</h2>
-      <p class="hero-cap">Chinese President Xi Jinping, US President Donald Trump and Russian President Vladimir Putin exchanged greetings at the APEC summit in Shenzhen ahead of a group photo with world leaders &mdash; the three leaders are due to hold their first-ever trilateral summit on Thursday.</p>
-    </div>
-    <div class="hero-art">
-      <svg width="176" height="146" viewBox="0 0 180 150" aria-hidden="true">
-        <line x1="8" y1="134" x2="172" y2="134" stroke="#1b1611" stroke-width="2"></line>
-        <line x1="42" y1="34" x2="42" y2="134" stroke="#1b1611" stroke-width="2.5"></line>
-        <line x1="90" y1="24" x2="90" y2="134" stroke="#1b1611" stroke-width="2.5"></line>
-        <line x1="138" y1="34" x2="138" y2="134" stroke="#1b1611" stroke-width="2.5"></line>
-        <path d="M42 36 h30 v20 h-30 z" fill="#9d2b1f"></path>
-        <path d="M90 26 h32 v22 h-32 z" fill="#2f4f5e"></path>
-        <path d="M138 36 h28 v18 h-28 z" fill="#a8801f"></path>
-        <circle cx="42" cy="86" r="8" fill="#1b1611"></circle>
-        <path d="M34 134 v-32 l8 -14 l8 14 v32 z" fill="#41382e"></path>
-        <circle cx="90" cy="78" r="9" fill="#1b1611"></circle>
-        <path d="M81 134 v-38 l9 -16 l9 16 v38 z" fill="#41382e"></path>
-        <circle cx="138" cy="86" r="8" fill="#1b1611"></circle>
-        <path d="M130 134 v-32 l8 -14 l8 14 v32 z" fill="#41382e"></path>
-      </svg>
-    </div>
-  </section>
-  <section class="grid">
-    <article class="card">
-      <div class="card-art">
-        <svg width="96" height="145" viewBox="0 0 110 170" aria-hidden="true">
-          <path d="M55 6 L74 34 L36 34 Z" fill="#a8801f" stroke="#1b1611" stroke-width="2.5"></path>
-          <rect x="52.5" y="14" width="5" height="11" fill="#1b1611"></rect>
-          <rect x="52.5" y="27" width="5" height="5" fill="#1b1611"></rect>
-          <rect x="16" y="44" width="8" height="52" fill="#1b1611"></rect>
-          <rect x="86" y="44" width="8" height="52" fill="#1b1611"></rect>
-          <line x1="20" y1="48" x2="38" y2="92" stroke="#1b1611" stroke-width="1.6"></line>
-          <line x1="20" y1="48" x2="50" y2="92" stroke="#1b1611" stroke-width="1.6"></line>
-          <line x1="90" y1="48" x2="72" y2="92" stroke="#1b1611" stroke-width="1.6"></line>
-          <line x1="90" y1="48" x2="100" y2="92" stroke="#1b1611" stroke-width="1.6"></line>
-          <rect x="2" y="90" width="44" height="8" fill="#1b1611"></rect>
-          <rect x="62" y="90" width="46" height="8" fill="#1b1611"></rect>
-          <path d="M46 92 L54 106 L60 96 L62 112" fill="none" stroke="#9d2b1f" stroke-width="3.5"></path>
-          <path d="M0 128 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t10 0" fill="none" stroke="#2f4f5e" stroke-width="3.5"></path>
-          <path d="M0 148 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t10 0" fill="none" stroke="#2f4f5e" stroke-width="3.5"></path>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="kicker">War &middot; Ukraine</div>
-        <h3 class="card-headline">Crimean Bridge attacked again, Russian official says</h3>
-        <p class="card-cap">Attacked by Ukraine for the third time this week, a Russian official said. Traffic was temporarily suspended after another strike in the early hours of Thursday; the bridge had already been hit twice earlier in the week, part of it collapsing into the water.</p>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-art">
-        <svg width="96" height="145" viewBox="0 0 110 170" aria-hidden="true">
-          <rect x="0" y="142" width="110" height="3" fill="#1b1611"></rect>
-          <path d="M12 130 Q55 16 98 130" fill="none" stroke="#9d2b1f" stroke-width="2.5" stroke-dasharray="6 5"></path>
-          <g transform="translate(55 44) rotate(30)">
-            <polygon points="0,-24 9,-7 -9,-7" fill="#1b1611"></polygon>
-            <rect x="-9" y="-7" width="18" height="28" fill="#1b1611"></rect>
-            <polygon points="-9,21 -16,32 -4,21" fill="#9d2b1f"></polygon>
-            <polygon points="9,21 16,32 4,21" fill="#9d2b1f"></polygon>
-          </g>
-          <rect x="8" y="112" width="14" height="30" fill="#2f4f5e"></rect>
-          <rect x="25" y="100" width="12" height="42" fill="#2f4f5e"></rect>
-          <rect x="40" y="118" width="10" height="24" fill="#2f4f5e"></rect>
-          <rect x="78" y="104" width="12" height="38" fill="#2f4f5e"></rect>
-          <rect x="93" y="116" width="11" height="26" fill="#2f4f5e"></rect>
-          <rect x="11" y="118" width="4" height="4" fill="#f6f1e4"></rect>
-          <rect x="17" y="118" width="4" height="4" fill="#f6f1e4"></rect>
-          <rect x="28" y="106" width="4" height="4" fill="#f6f1e4"></rect>
-          <rect x="81" y="110" width="4" height="4" fill="#f6f1e4"></rect>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="kicker">War &middot; Middle East</div>
-        <h3 class="card-headline">Trump says Iran seeks new weapons; Houthis target Riyadh</h3>
-        <p class="card-cap">Trump claimed Iran is seeking chemical and biological weapons. Houthi rebels fired a missile towards Riyadh; the Saudi-led coalition says it responded and is assessing damage from falling debris.</p>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-art">
-        <svg width="96" height="145" viewBox="0 0 110 170" aria-hidden="true">
-          <line x1="12" y1="14" x2="12" y2="148" stroke="#1b1611" stroke-width="2.5"></line>
-          <line x1="12" y1="148" x2="104" y2="148" stroke="#1b1611" stroke-width="2.5"></line>
-          <rect x="20" y="122" width="13" height="26" fill="#2f4f5e"></rect>
-          <rect x="38" y="104" width="13" height="44" fill="#2f4f5e"></rect>
-          <rect x="56" y="86" width="13" height="62" fill="#2f4f5e"></rect>
-          <rect x="74" y="62" width="13" height="86" fill="#2f4f5e"></rect>
-          <rect x="92" y="38" width="13" height="110" fill="#9d2b1f"></rect>
-          <path d="M22 116 L94 52" stroke="#1b1611" stroke-width="2.5"></path>
-          <polygon points="102,42 90,50 98,58" fill="#1b1611"></polygon>
-          <text x="26" y="36" font-size="22" font-weight="700" fill="#a8801f" text-anchor="middle">$</text>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="kicker">Tech &middot; Business</div>
-        <h3 class="card-headline">AI giant Anthropic valued at up to $1.5tn ahead of stock market debut</h3>
-        <p class="card-cap">Shares priced at $83 each start trading on the Nasdaq on Thursday. The first US firm focused exclusively on AI to go public; shares were more than 10 times oversubscribed.</p>
-      </div>
-    </article>
-    <article class="card">
-      <div class="card-art">
-        <svg width="96" height="145" viewBox="0 0 110 170" aria-hidden="true">
-          <circle cx="55" cy="20" r="8" fill="#a8801f" stroke="#1b1611" stroke-width="2.5"></circle>
-          <rect x="20" y="30" width="70" height="6" fill="#1b1611"></rect>
-          <rect x="52" y="34" width="6" height="100" fill="#1b1611"></rect>
-          <line x1="28" y1="36" x2="28" y2="74" stroke="#1b1611" stroke-width="2"></line>
-          <line x1="82" y1="36" x2="82" y2="74" stroke="#1b1611" stroke-width="2"></line>
-          <path d="M10 74 h36 a18 18 0 0 1 -36 0 Z" fill="#2f4f5e" stroke="#1b1611" stroke-width="2"></path>
-          <path d="M64 74 h36 a18 18 0 0 1 -36 0 Z" fill="#9d2b1f" stroke="#1b1611" stroke-width="2"></path>
-          <rect x="32" y="134" width="46" height="8" fill="#1b1611"></rect>
-          <rect x="22" y="142" width="66" height="8" fill="#1b1611"></rect>
-          <rect x="22" y="150" width="66" height="6" fill="#1b1611"></rect>
-        </svg>
-      </div>
-      <div class="card-body">
-        <div class="kicker">Courts &middot; The Hague</div>
-        <h3 class="card-headline">ICJ to rule on Rohingya genocide case against Myanmar</h3>
-        <p class="card-cap">The court rules Thursday on Gambia&rsquo;s case accusing Myanmar of genocide after a 2017 crackdown that displaced over 730,000 Rohingya. It could be the first ruling that a state committed genocide.</p>
-      </div>
-    </article>
-  </section>
-  <section class="strip">
-    <div class="strip-art">
-      <svg width="112" height="88" viewBox="0 0 120 96" aria-hidden="true">
-        <path d="M60 6 L104 20 V50 C104 74 82 87 60 92 C38 87 16 74 16 50 V20 Z" fill="#fbf8ef" stroke="#1b1611" stroke-width="3"></path>
-        <rect x="54" y="26" width="12" height="42" fill="#9d2b1f"></rect>
-        <rect x="39" y="41" width="42" height="12" fill="#9d2b1f"></rect>
-        <circle cx="26" cy="74" r="3.4" fill="#1b1611"></circle>
-        <circle cx="35" cy="74" r="3.4" fill="#1b1611"></circle>
-        <circle cx="44" cy="74" r="3.4" fill="#1b1611"></circle>
-        <circle cx="76" cy="74" r="3.4" fill="#1b1611"></circle>
-        <circle cx="85" cy="74" r="3.4" fill="#1b1611"></circle>
-        <circle cx="94" cy="74" r="3.4" fill="#1b1611"></circle>
-        <circle cx="103" cy="74" r="3.4" fill="#9d2b1f" stroke="#1b1611" stroke-width="1.4"></circle>
-      </svg>
-    </div>
-    <div class="strip-body">
-      <div class="kicker">Health &middot; United States</div>
-      <h3 class="strip-headline">Unvaccinated Pennsylvania resident dies amid historic US measles resurgence</h3>
-      <p class="strip-cap">An unvaccinated Pennsylvania resident has died after contracting measles, the eighth measles-related fatality in the state this year &mdash; a day after the US formally lost its 26-year elimination status.</p>
-    </div>
-  </section>
-  <footer class="footer">
-    <span>World Edition</span>
-    <span class="ft-strong">Thursday, 19 November 2026</span>
-    <span>Six stories from around the world</span>
-  </footer>
+<div class="poster">
+<header class="masthead">
+  <div class="paper-name">THE WORLD IN ONE DAY</div>
+  <div class="edition">100 STORIES IN ONE PAPER: 6 HEROES, 94 INDEX LINES, UTC TIMELINE, WORLD MAP</div>
+  <div class="dateline">THURSDAY, 19 NOVEMBER 2026</div>
+</header>
+<section class="heroes"><article class="hero"><span class="tag">ASIA-PACIFIC · DIPLOMACY</span><h2>APEC: Xi greets Trump and Putin before their first trilateral summit</h2><p>Chinese President Xi Jinping, US President Donald Trump and Russian President Vladimir Putin exchanged greetings at the APEC summit in Shenzhen ahead of a group photo with world leaders. The three are due to hold their first-ever trilateral summit on Thursday.</p></article><article class="hero war"><span class="tag">UKRAINE · WAR</span><h2>Crimean Bridge attacked a third time this week, Russian official says</h2><p>Attacked by Ukraine for the third time this week, a Russian official said. Traffic was temporarily suspended after another strike in the early hours of Thursday; the bridge had already been hit twice earlier in the week, part of it collapsing into the water.</p></article><article class="hero war"><span class="tag">MIDDLE EAST · WAR</span><h2>Trump says Iran seeks new weapons; Houthis fire at Riyadh</h2><p>Trump claimed Iran is seeking chemical and biological weapons. Houthi rebels fired a missile towards Riyadh; the Saudi-led coalition says it responded and is assessing damage from falling debris.</p></article><article class="hero"><span class="tag">USA · TECH / BUSINESS</span><h2>Anthropic valued at up to $1.5tn ahead of its market debut</h2><p>Shares priced at $83 each start trading on the Nasdaq on Thursday. The first US firm focused exclusively on AI to go public; the offering was more than ten times oversubscribed.</p></article><article class="hero"><span class="tag">THE HAGUE / MYANMAR · COURTS</span><h2>ICJ to rule on Rohingya genocide case against Myanmar</h2><p>The court rules Thursday on Gambia's case accusing Myanmar of genocide after a 2017 crackdown that displaced over 730,000 Rohingya. It could be the first ruling that a state committed genocide.</p></article><article class="hero war"><span class="tag">USA · HEALTH</span><h2>Unvaccinated Pennsylvanian dies amid historic measles resurgence</h2><p>An unvaccinated Pennsylvania resident has died after contracting measles, the eighth measles-related fatality in the state this year -- a day after the US formally lost its 26-year elimination status.</p></article></section>
+<section class="band"><h3>UTC TIMELINE &mdash; THURSDAY 19 NOVEMBER 2026 (ALL TIMES UTC)</h3>
+<ul class="timeline"><li><span class="t">00:11</span><span class="txt">Coalition of the Willing meets in Berlin</span></li><li><span class="t">00:30</span><span class="txt">Australia unemployment jumps to 4.9%</span></li><li><span class="t">02:49</span><span class="txt">Iran fires drones at US base in Kuwait</span></li><li><span class="t">04:12</span><span class="txt">Indonesia passes asset-forfeiture bill</span></li><li><span class="t">04:59</span><span class="txt">IEA releases World Energy Outlook 2026</span></li><li><span class="t">17:00</span><span class="txt">NASA briefs Voyager 1 at one light-day</span></li><li><span class="t">17:05</span><span class="txt">Dragon CRS-35 undocking window opens</span></li><li><span class="t">19:30</span><span class="txt">Zverev faces Fils in ATP Finals decider</span></li></ul></section>
+<section class="maprow">
+  <div class="mapbox"><h3>WHERE IT HAPPENED &mdash; 12 PINS</h3>
+    <svg viewBox="0 0 494 140" width="100%" role="img"
+         aria-label="World map with the 12 pinned places"><ellipse class="land" cx="109.8" cy="35.0" rx="62" ry="21" /><ellipse class="land" cx="189.4" cy="10.9" rx="19" ry="8" /><ellipse class="land" cx="167.4" cy="84.0" rx="27" ry="33" /><ellipse class="land" cx="267.6" cy="29.6" rx="27" ry="12" /><ellipse class="land" cx="274.4" cy="66.1" rx="31" ry="39" /><ellipse class="land" cx="370.5" cy="27.2" rx="96" ry="25" /><ellipse class="land" cx="354.0" cy="52.9" rx="15" ry="19" /><ellipse class="land" cx="408.9" cy="70.0" rx="34" ry="10" /><ellipse class="land" cx="430.9" cy="89.4" rx="32" ry="15" /><ellipse class="land" cx="437.7" cy="41.2" rx="6" ry="12" /><circle class="pin" cx="403.6" cy="52.5" r="2.6" /><text class="lab" x="4" y="115.2"><tspan class="n">1</tspan> SHENZHEN, CHINA</text><circle class="pin" cx="297.1" cy="34.7" r="2.6" /><text class="lab" x="4" y="32.2"><tspan class="n">2</tspan> KERCH / CRIMEA</text><circle class="pin" cx="312.3" cy="47.3" r="2.6" /><text class="lab" x="4" y="115.2"><tspan class="n">3</tspan> KUWAIT (ALI AL SALEM)</text><circle class="pin" cx="311.1" cy="50.8" r="2.6" /><text class="lab" x="4" y="115.2"><tspan class="n">4</tspan> RIYADH, SAUDI ARABIA</text><circle class="pin" cx="324.5" cy="49.3" r="2.6" /><text class="lab" x="4" y="135.2"><tspan class="n">5</tspan> STRAIT OF HORMUZ</text><circle class="pin" cx="294.1" cy="45.5" r="2.6" /><text class="lab" x="4" y="115.2"><tspan class="n">6</tspan> NUSEIRAT, GAZA</text><circle class="pin" cx="265.4" cy="29.2" r="2.6" /><text class="lab" x="4" y="32.2"><tspan class="n">7</tspan> BERLIN, GERMANY</text><circle class="pin" cx="252.9" cy="29.5" r="2.6" /><text class="lab" x="4" y="32.2"><tspan class="n">8</tspan> THE HAGUE, NETHERLANDS</text><circle class="pin" cx="145.5" cy="38.3" r="2.6" /><text class="lab" x="4" y="32.2"><tspan class="n">9</tspan> NEW YORK, USA</text><circle class="pin" cx="486.9" cy="102.1" r="2.6" /><text class="lab" x="4" y="135.2"><tspan class="n">10</tspan> WELLINGTON, NEW ZEALAND</text><circle class="pin" cx="289.1" cy="41.3" r="2.6" /><text class="lab" x="4" y="32.2"><tspan class="n">11</tspan> ANTALYA, TURKEY</text><circle class="pin" cx="371.0" cy="51.5" r="2.6" /><text class="lab" x="4" y="115.2"><tspan class="n">12</tspan> DHAKA, BANGLADESH</text></svg>
+  </div>
+  <div class="datecheck"><h3>DATE CHECK &mdash; DAY 323 / 365</h3>
+    <div class="bar"><i></i></div>
+    <div>1 JAN 2026 &nbsp;&middot;&nbsp; 31 DEC 2026</div>
+    <ol><li><b>1.</b> THURSDAY 19 NOVEMBER 2026 -- VERIFIED DAY OF WEEK</li><li><b>2.</b> DAY 323 OF 365 -- 42 DAYS LEFT IN 2026</li><li><b>3.</b> GTA VI LAUNCHED TODAY AFTER A 13-YEAR WAIT</li><li><b>4.</b> VOYAGER 1 IS ONE LIGHT-DAY FROM EARTH</li><li><b>5.</b> ANTHROPIC SHARES DEBUT ON NASDAQ AT $83 EACH</li></ol></div>
+</section>
+<section class="index"><h3 style="margin-bottom:8px;color:var(--red)">THE INDEX &mdash; 94 MORE
+STORIES (NUMBERS 7 TO 100)</h3><div><h4>WAR &amp; SECURITY</h4><ol><li><b>07</b> &middot; Middle East &middot; Iran drones hit US base in Kuwait after Qeshm strike</li><li><b>08</b> &middot; Gaza &middot; Israel launches rare Gaza ground raid beyond ceasefire line</li><li><b>09</b> &middot; Europe &middot; Allies meet in Berlin over Ukraine security guarantees</li><li><b>10</b> &middot; Gulf &middot; Tanker struck in Hormuz strait, one crew missing</li><li><b>11</b> &middot; USA &middot; Russian charged with spying on Palantir staff in California</li></ol></div><div><h4>POLITICS &amp; DIPLOMACY</h4><ol><li><b>12</b> &middot; SE Asia &middot; Indonesia passes asset-forfeiture law after eighteen years</li><li><b>13</b> &middot; Asia-Pacific &middot; Takaichi shakes Xi's hand, holds Putin talks at APEC</li><li><b>14</b> &middot; South Asia &middot; Bangladesh lockdown turns violent, Yunus home torched</li><li><b>15</b> &middot; Middle East &middot; Israel delays E1 settlement contracts after UK sanctions</li></ol></div><div><h4>ECONOMY &amp; MARKETS</h4><ol><li><b>16</b> &middot; Australia &middot; Australia jobless jumps to 4.9% as 43,500 jobs vanish</li><li><b>17</b> &middot; USA &middot; Fed minutes signal more hikes; Dow falls 561 points</li><li><b>18</b> &middot; Europe &middot; Eurozone inflation hits 4% as euro sinks 19-month low</li><li><b>19</b> &middot; USA &middot; UnitedHealth plunges 10% on Medicare audit crackdown</li><li><b>20</b> &middot; USA &middot; Palo Alto beats forecasts, bets $4.5bn on AI startup</li><li><b>21</b> &middot; Global &middot; Bitcoin slips below $63,000 as ETF outflows hit $306m</li><li><b>22</b> &middot; USA/China &middot; Nvidia halts Hopper chip shipments to China after earnings</li><li><b>23</b> &middot; USA/China &middot; US closes offshore AI-chip loophole as rule takes effect</li><li><b>24</b> &middot; China &middot; Lenovo revenue jumps 48% as AI servers drive record quarter</li><li><b>25</b> &middot; Australia &middot; ASX drops 91 points in sixth straight losing session</li><li><b>26</b> &middot; Global &middot; Oil holds near $92 after Hormuz tanker attack mounts pressure</li><li><b>27</b> &middot; Poland &middot; Polish copper miner KGHM beats forecasts with PLN 4bn EBITDA</li><li><b>28</b> &middot; Australia &middot; Nufarm underlying earnings rise 25% despite statutory loss</li><li><b>29</b> &middot; Australia &middot; oOh!media acquisition scheme becomes legally effective</li><li><b>30</b> &middot; Australia/NZ &middot; A2 Milk shares plunge 11% on cautious China sales update</li><li><b>31</b> &middot; USA &middot; Nvidia shares fall 2.9% despite record $115.8bn revenue</li><li><b>32</b> &middot; Malaysia &middot; Ringgit rises after stronger Malaysian third-quarter GDP growth</li><li><b>33</b> &middot; Australia &middot; General Pants collapses into administration, 500 jobs at risk</li><li><b>34</b> &middot; Pakistan &middot; Pakistan cuts petrol and diesel by Rs3 as new rates take effect</li><li><b>35</b> &middot; India &middot; Modi hails record $50bn exports and 7% growth at FICCI</li><li><b>36</b> &middot; India &middot; Sensex rises 400 points as Nifty tops 25,350 in rally</li><li><b>37</b> &middot; India/UK &middot; Diageo shares fall in India on Scotch tariff jolt</li><li><b>38</b> &middot; Egypt &middot; IMF agrees Egypt deal unlocking $2.3 billion in funds</li></ol></div><div><h4>TECHNOLOGY &amp; SCIENCE</h4><ol><li><b>39</b> &middot; Space &middot; NASA briefs Voyager 1 at one light-day from Earth</li><li><b>40</b> &middot; Global &middot; Critical NGINX2ROOT flaw lets attackers run code remotely</li><li><b>41</b> &middot; ISS &middot; Dragon undocking window opens after weather stand-down delay</li><li><b>42</b> &middot; Global &middot; Nanotwinned ceramic bends 60% without breaking, study shows</li><li><b>43</b> &middot; UK &middot; Google rejects UK request to remove Russell Brand video</li></ol></div><div><h4>HEALTH, CLIMATE &amp; ENERGY</h4><ol><li><b>44</b> &middot; Global &middot; IEA: renewables may supply half of electricity by 2035</li><li><b>45</b> &middot; Turkey &middot; COP31 enters final stretch as new draft text is expected</li><li><b>46</b> &middot; Philippines &middot; Philippine hospitals ready for El Nino health emergencies</li><li><b>47</b> &middot; USA &middot; US flu surges early: 2.6m ill and 2,100 dead so far</li><li><b>48</b> &middot; USA &middot; Flood Watch holds for Southeast Florida through Thursday evening</li><li><b>49</b> &middot; India &middot; Cyclone Akvan heads for India's east coast, 50,000 evacuated</li><li><b>50</b> &middot; Indonesia &middot; Indonesia fire emissions third highest on record, monitor says</li><li><b>51</b> &middot; Global &middot; Datacentres to emit 70% more carbon by 2030, IEA warns</li></ol></div><div><h4>CULTURE, SPORT &amp; SOCIETY</h4><ol><li><b>52</b> &middot; Global &middot; GTA VI launches worldwide to record 99 Metacritic score</li><li><b>53</b> &middot; NZ/India &middot; New Zealand fight back in Wellington Test after 70 for 5</li><li><b>54</b> &middot; Nigeria &middot; FIFA names five-member committee to run Nigerian football</li><li><b>55</b> &middot; Finland &middot; Seven Russian skaters barred from Finlandia Trophy in Helsinki</li><li><b>56</b> &middot; USA &middot; Gordon Ramsay receives 2,864th Hollywood Walk of Fame star</li><li><b>57</b> &middot; Italy &middot; ATP Finals decider: Zverev faces Fils for semi-final place</li><li><b>58</b> &middot; USA &middot; Van Gogh sells for record $190.4m at Sotheby's New York</li><li><b>59</b> &middot; England &middot; Chelsea Women edge PSG late to top Champions League table</li><li><b>60</b> &middot; Spain &middot; World Cup winner Juan Mata retires from football at 38</li><li><b>61</b> &middot; USA &middot; Ella Langley sweeps six CMA Awards in Nashville ceremony</li><li><b>62</b> &middot; Global &middot; Record 589 million children now live in conflict zones</li><li><b>63</b> &middot; UK &middot; Norris backs F1 Middle East finale despite safety risks</li><li><b>64</b> &middot; NZ &middot; New Zealand court rules pay equity overhaul violated rights</li><li><b>65</b> &middot; Japan &middot; Magnitude 5.7 earthquake strikes Japan's Kumamoto, no tsunami</li><li><b>66</b> &middot; S. Korea &middot; Half million South Koreans sit college exam amid AI crackdown</li><li><b>67</b> &middot; S. Korea &middot; South Korea's Lee and Putin hold first meeting seeking calm</li><li><b>68</b> &middot; Vietnam &middot; Vietnam and Russia agree deeper energy cooperation, nuclear too</li><li><b>69</b> &middot; Taiwan &middot; Taiwan adds one gigawatt of wind power as Hai Long goes live</li><li><b>70</b> &middot; Singapore &middot; Singapore's Max Maeder wins male World Sailor of the Year</li><li><b>71</b> &middot; Philippines &middot; Marcos and Sheinbaum seek stronger Philippines-Mexico trade ties</li><li><b>72</b> &middot; Australia &middot; Wreck of Australia's first home-built warship found after 128 years</li><li><b>73</b> &middot; Sudan &middot; Amnesty urges war crimes probe into RSF drone strikes</li><li><b>74</b> &middot; Egypt/Syria &middot; Egypt and Syria restore direct flights after fourteen years</li><li><b>75</b> &middot; Nigeria &middot; Tinubu receives state police bill after assemblies approve it</li><li><b>76</b> &middot; Kenya &middot; Ruto begins ten-day Western Kenya development tour in Busia</li><li><b>77</b> &middot; Kenya &middot; Sifuna calls Ruto State address a cover-up for rights abuses</li><li><b>78</b> &middot; S. Africa &middot; Gauteng coalition talks intensify over deputy mayoral posts</li><li><b>79</b> &middot; Morocco &middot; Morocco launches defence roadmap targeting fifty thousand jobs</li><li><b>80</b> &middot; Libya &middot; ICC sets first Libya trial for May after fifteen years</li><li><b>81</b> &middot; Ethiopia &middot; Abiy inaugurates Bole corridor in Addis Ababa urban renewal</li><li><b>82</b> &middot; UAE &middot; Dubai police sign three security deals with Morocco and Poland</li><li><b>83</b> &middot; Jordan/UAE &middot; UAE backs Jordan after military helicopter crash injures several</li><li><b>84</b> &middot; USA &middot; Trump asks Supreme Court again over Venezuelan TPS protections</li><li><b>85</b> &middot; USA &middot; Cornyn blocks Trump judicial nominee Gaiser in Texas</li><li><b>86</b> &middot; USA &middot; Judge extends block on Trump triumphal arch by two weeks</li><li><b>87</b> &middot; USA &middot; US officials say tech outages were not a coordinated cyberattack</li><li><b>88</b> &middot; USA/Haiti &middot; Florida pastor convicted over Haitian president assassination plot</li><li><b>89</b> &middot; USA &middot; Begich wins Alaska House reelection in ranked-choice count</li><li><b>90</b> &middot; USA &middot; Mayweather felony charges dismissed over bad check case</li><li><b>91</b> &middot; Canada &middot; Canada suspends cadet training until March amid budget cuts</li><li><b>92</b> &middot; EU &middot; EU delays methane import rules two years for energy security</li><li><b>93</b> &middot; UK &middot; Britain scraps feudal leasehold system, caps ground rents at 250</li><li><b>94</b> &middot; UK/Italy &middot; Bayesian crew unaware of hidden wind risk, final report finds</li><li><b>95</b> &middot; Spain &middot; Sanchez and Feijoo face off in sole televised election debate</li><li><b>96</b> &middot; EU &middot; EU ministers meet on enlargement, Montenegro closes two chapters</li><li><b>97</b> &middot; USA &middot; Cezanne Harlequin fetches $111m with fees at Sotheby's</li><li><b>98</b> &middot; USA &middot; Magritte bowler-hat painting sells for $45.5m at Sotheby's</li><li><b>99</b> &middot; USA &middot; Mary Cassatt's Summertime sets record at $13.3m with fees</li><li><b>100</b> &middot; USA &middot; Aaron Douglas's Harriet Tubman sets record at $14.48m</li></ol></div></section>
+<footer><span>100 POSTER-READY STORIES FOR THURSDAY 19 NOVEMBER 2026; SOURCES ARE TIER 1/2 WIRES
+AND PRIMARY RELEASES</span><span>THE WORLD IN ONE DAY</span></footer>
 </div>
+<section class="all100"><h3 style="color:var(--ink)">ALL 100 STORIES (6 HEROES + 94 INDEX)</h3>
+<ol><li><span class="k">H1</span> APEC: Xi greets Trump and Putin before their first trilateral summit</li><li><span class="k">H2</span> Crimean Bridge attacked a third time this week, Russian official says</li><li><span class="k">H3</span> Trump says Iran seeks new weapons; Houthis fire at Riyadh</li><li><span class="k">H4</span> Anthropic valued at up to $1.5tn ahead of its market debut</li><li><span class="k">H5</span> ICJ to rule on Rohingya genocide case against Myanmar</li><li><span class="k">H6</span> Unvaccinated Pennsylvanian dies amid historic measles resurgence</li><li><span class="k">07</span> Iran drones hit US base in Kuwait after Qeshm strike <i>(Middle East)</i></li><li><span class="k">08</span> Israel launches rare Gaza ground raid beyond ceasefire line <i>(Gaza)</i></li><li><span class="k">09</span> Allies meet in Berlin over Ukraine security guarantees <i>(Europe)</i></li><li><span class="k">10</span> Tanker struck in Hormuz strait, one crew missing <i>(Gulf)</i></li><li><span class="k">11</span> Russian charged with spying on Palantir staff in California <i>(USA)</i></li><li><span class="k">12</span> Indonesia passes asset-forfeiture law after eighteen years <i>(SE Asia)</i></li><li><span class="k">13</span> Takaichi shakes Xi's hand, holds Putin talks at APEC <i>(Asia-Pacific)</i></li><li><span class="k">14</span> Bangladesh lockdown turns violent, Yunus home torched <i>(South Asia)</i></li><li><span class="k">15</span> Israel delays E1 settlement contracts after UK sanctions <i>(Middle East)</i></li><li><span class="k">16</span> Australia jobless jumps to 4.9% as 43,500 jobs vanish <i>(Australia)</i></li><li><span class="k">17</span> Fed minutes signal more hikes; Dow falls 561 points <i>(USA)</i></li><li><span class="k">18</span> Eurozone inflation hits 4% as euro sinks 19-month low <i>(Europe)</i></li><li><span class="k">19</span> UnitedHealth plunges 10% on Medicare audit crackdown <i>(USA)</i></li><li><span class="k">20</span> Palo Alto beats forecasts, bets $4.5bn on AI startup <i>(USA)</i></li><li><span class="k">21</span> Bitcoin slips below $63,000 as ETF outflows hit $306m <i>(Global)</i></li><li><span class="k">22</span> Nvidia halts Hopper chip shipments to China after earnings <i>(USA/China)</i></li><li><span class="k">23</span> US closes offshore AI-chip loophole as rule takes effect <i>(USA/China)</i></li><li><span class="k">24</span> Lenovo revenue jumps 48% as AI servers drive record quarter <i>(China)</i></li><li><span class="k">25</span> ASX drops 91 points in sixth straight losing session <i>(Australia)</i></li><li><span class="k">26</span> Oil holds near $92 after Hormuz tanker attack mounts pressure <i>(Global)</i></li><li><span class="k">27</span> Polish copper miner KGHM beats forecasts with PLN 4bn EBITDA <i>(Poland)</i></li><li><span class="k">28</span> Nufarm underlying earnings rise 25% despite statutory loss <i>(Australia)</i></li><li><span class="k">29</span> oOh!media acquisition scheme becomes legally effective <i>(Australia)</i></li><li><span class="k">30</span> A2 Milk shares plunge 11% on cautious China sales update <i>(Australia/NZ)</i></li><li><span class="k">31</span> Nvidia shares fall 2.9% despite record $115.8bn revenue <i>(USA)</i></li><li><span class="k">32</span> Ringgit rises after stronger Malaysian third-quarter GDP growth <i>(Malaysia)</i></li><li><span class="k">33</span> General Pants collapses into administration, 500 jobs at risk <i>(Australia)</i></li><li><span class="k">34</span> Pakistan cuts petrol and diesel by Rs3 as new rates take effect <i>(Pakistan)</i></li><li><span class="k">35</span> Modi hails record $50bn exports and 7% growth at FICCI <i>(India)</i></li><li><span class="k">36</span> Sensex rises 400 points as Nifty tops 25,350 in rally <i>(India)</i></li><li><span class="k">37</span> Diageo shares fall in India on Scotch tariff jolt <i>(India/UK)</i></li><li><span class="k">38</span> IMF agrees Egypt deal unlocking $2.3 billion in funds <i>(Egypt)</i></li><li><span class="k">39</span> NASA briefs Voyager 1 at one light-day from Earth <i>(Space)</i></li><li><span class="k">40</span> Critical NGINX2ROOT flaw lets attackers run code remotely <i>(Global)</i></li><li><span class="k">41</span> Dragon undocking window opens after weather stand-down delay <i>(ISS)</i></li><li><span class="k">42</span> Nanotwinned ceramic bends 60% without breaking, study shows <i>(Global)</i></li><li><span class="k">43</span> Google rejects UK request to remove Russell Brand video <i>(UK)</i></li><li><span class="k">44</span> IEA: renewables may supply half of electricity by 2035 <i>(Global)</i></li><li><span class="k">45</span> COP31 enters final stretch as new draft text is expected <i>(Turkey)</i></li><li><span class="k">46</span> Philippine hospitals ready for El Nino health emergencies <i>(Philippines)</i></li><li><span class="k">47</span> US flu surges early: 2.6m ill and 2,100 dead so far <i>(USA)</i></li><li><span class="k">48</span> Flood Watch holds for Southeast Florida through Thursday evening <i>(USA)</i></li><li><span class="k">49</span> Cyclone Akvan heads for India's east coast, 50,000 evacuated <i>(India)</i></li><li><span class="k">50</span> Indonesia fire emissions third highest on record, monitor says <i>(Indonesia)</i></li><li><span class="k">51</span> Datacentres to emit 70% more carbon by 2030, IEA warns <i>(Global)</i></li><li><span class="k">52</span> GTA VI launches worldwide to record 99 Metacritic score <i>(Global)</i></li><li><span class="k">53</span> New Zealand fight back in Wellington Test after 70 for 5 <i>(NZ/India)</i></li><li><span class="k">54</span> FIFA names five-member committee to run Nigerian football <i>(Nigeria)</i></li><li><span class="k">55</span> Seven Russian skaters barred from Finlandia Trophy in Helsinki <i>(Finland)</i></li><li><span class="k">56</span> Gordon Ramsay receives 2,864th Hollywood Walk of Fame star <i>(USA)</i></li><li><span class="k">57</span> ATP Finals decider: Zverev faces Fils for semi-final place <i>(Italy)</i></li><li><span class="k">58</span> Van Gogh sells for record $190.4m at Sotheby's New York <i>(USA)</i></li><li><span class="k">59</span> Chelsea Women edge PSG late to top Champions League table <i>(England)</i></li><li><span class="k">60</span> World Cup winner Juan Mata retires from football at 38 <i>(Spain)</i></li><li><span class="k">61</span> Ella Langley sweeps six CMA Awards in Nashville ceremony <i>(USA)</i></li><li><span class="k">62</span> Record 589 million children now live in conflict zones <i>(Global)</i></li><li><span class="k">63</span> Norris backs F1 Middle East finale despite safety risks <i>(UK)</i></li><li><span class="k">64</span> New Zealand court rules pay equity overhaul violated rights <i>(NZ)</i></li><li><span class="k">65</span> Magnitude 5.7 earthquake strikes Japan's Kumamoto, no tsunami <i>(Japan)</i></li><li><span class="k">66</span> Half million South Koreans sit college exam amid AI crackdown <i>(S. Korea)</i></li><li><span class="k">67</span> South Korea's Lee and Putin hold first meeting seeking calm <i>(S. Korea)</i></li><li><span class="k">68</span> Vietnam and Russia agree deeper energy cooperation, nuclear too <i>(Vietnam)</i></li><li><span class="k">69</span> Taiwan adds one gigawatt of wind power as Hai Long goes live <i>(Taiwan)</i></li><li><span class="k">70</span> Singapore's Max Maeder wins male World Sailor of the Year <i>(Singapore)</i></li><li><span class="k">71</span> Marcos and Sheinbaum seek stronger Philippines-Mexico trade ties <i>(Philippines)</i></li><li><span class="k">72</span> Wreck of Australia's first home-built warship found after 128 years <i>(Australia)</i></li><li><span class="k">73</span> Amnesty urges war crimes probe into RSF drone strikes <i>(Sudan)</i></li><li><span class="k">74</span> Egypt and Syria restore direct flights after fourteen years <i>(Egypt/Syria)</i></li><li><span class="k">75</span> Tinubu receives state police bill after assemblies approve it <i>(Nigeria)</i></li><li><span class="k">76</span> Ruto begins ten-day Western Kenya development tour in Busia <i>(Kenya)</i></li><li><span class="k">77</span> Sifuna calls Ruto State address a cover-up for rights abuses <i>(Kenya)</i></li><li><span class="k">78</span> Gauteng coalition talks intensify over deputy mayoral posts <i>(S. Africa)</i></li><li><span class="k">79</span> Morocco launches defence roadmap targeting fifty thousand jobs <i>(Morocco)</i></li><li><span class="k">80</span> ICC sets first Libya trial for May after fifteen years <i>(Libya)</i></li><li><span class="k">81</span> Abiy inaugurates Bole corridor in Addis Ababa urban renewal <i>(Ethiopia)</i></li><li><span class="k">82</span> Dubai police sign three security deals with Morocco and Poland <i>(UAE)</i></li><li><span class="k">83</span> UAE backs Jordan after military helicopter crash injures several <i>(Jordan/UAE)</i></li><li><span class="k">84</span> Trump asks Supreme Court again over Venezuelan TPS protections <i>(USA)</i></li><li><span class="k">85</span> Cornyn blocks Trump judicial nominee Gaiser in Texas <i>(USA)</i></li><li><span class="k">86</span> Judge extends block on Trump triumphal arch by two weeks <i>(USA)</i></li><li><span class="k">87</span> US officials say tech outages were not a coordinated cyberattack <i>(USA)</i></li><li><span class="k">88</span> Florida pastor convicted over Haitian president assassination plot <i>(USA/Haiti)</i></li><li><span class="k">89</span> Begich wins Alaska House reelection in ranked-choice count <i>(USA)</i></li><li><span class="k">90</span> Mayweather felony charges dismissed over bad check case <i>(USA)</i></li><li><span class="k">91</span> Canada suspends cadet training until March amid budget cuts <i>(Canada)</i></li><li><span class="k">92</span> EU delays methane import rules two years for energy security <i>(EU)</i></li><li><span class="k">93</span> Britain scraps feudal leasehold system, caps ground rents at 250 <i>(UK)</i></li><li><span class="k">94</span> Bayesian crew unaware of hidden wind risk, final report finds <i>(UK/Italy)</i></li><li><span class="k">95</span> Sanchez and Feijoo face off in sole televised election debate <i>(Spain)</i></li><li><span class="k">96</span> EU ministers meet on enlargement, Montenegro closes two chapters <i>(EU)</i></li><li><span class="k">97</span> Cezanne Harlequin fetches $111m with fees at Sotheby's <i>(USA)</i></li><li><span class="k">98</span> Magritte bowler-hat painting sells for $45.5m at Sotheby's <i>(USA)</i></li><li><span class="k">99</span> Mary Cassatt's Summertime sets record at $13.3m with fees <i>(USA)</i></li><li><span class="k">100</span> Aaron Douglas's Harriet Tubman sets record at $14.48m <i>(USA)</i></li></ol></section>
 </body>
 </html>

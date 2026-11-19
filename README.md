@@ -1,61 +1,59 @@
-# The World in One Day — 19 November 2026
+# The World in One Day — Thursday, 19 November 2026
 
-<p align="center">
-  <a href="https://make.fun"><img src="https://make.fun/badge/news-image-20261119.svg" alt="make.fun competition badge for news-image-20261119"></a><br>
-  <a href="https://make.fun/bounty/news-image-20261119"><img src="https://make.fun/badge/news-image-20261119/Endodo713/news-image-20261119/rank.svg" alt="rank badge"></a>
-  <a href="https://make.fun/bounty/news-image-20261119"><img src="https://make.fun/badge/news-image-20261119/Endodo713/news-image-20261119/reward.svg" alt="reward badge"></a>
-</p>
-
-One 1024 × 1024 picture that sums up the world's news of Thursday 19 November 2026, drawn as a newspaper front page. Built for the [make.fun](https://make.fun) competition [`news-image-20261119`](https://make.fun/bounty/news-image-20261119).
-
-## The six stories
-
-| Beat | Story | Reported by |
-| --- | --- | --- |
-| Diplomacy · Shenzhen | Xi greets Trump and Putin at APEC before historic summit | Al Jazeera, 19 Nov 2026 |
-| War · Ukraine | Crimean Bridge attacked again, Russian official says | BBC, 19 Nov 2026 |
-| War · Middle East | Trump says Iran seeks new weapons; Houthis target Riyadh | Al Jazeera, 19 Nov 2026 |
-| Tech · Business | AI giant Anthropic valued at up to $1.5tn ahead of stock market debut | BBC, 18–19 Nov 2026 |
-| Courts · The Hague | ICJ to rule on Rohingya genocide case against Myanmar | Al Jazeera, 19 Nov 2026 |
-| Health · United States | Unvaccinated Pennsylvania resident dies amid historic US measles resurgence | Al Jazeera, 19 Nov 2026 |
-
-Headlines and captions are taken from the source pages as published; nothing is invented or speculated.
-
-## Build
-
-Requires Node 22 or newer and a headless Chromium or Chrome binary on the machine. No network access is used at runtime, and no dependencies are installed.
-
-```bash
-node main.ts
-```
-
-That renders `poster.html` and writes the picture to `$MAKEFUN_OUTPUT_DIR/entry.png`, defaulting to `/output/entry.png`.
-
-```bash
-MAKEFUN_OUTPUT_DIR=./out node main.ts   # render somewhere else, e.g. for inspection
-```
-
-`main.ts` locates the browser itself: an explicit `CHROME_PATH` wins, then the usual system paths, then Playwright's and Puppeteer's cached builds under `~/.cache`.
-
-## Determinism
-
-Two runs write byte-identical files. The page is static HTML and inline SVG — no clock, no randomness, no web fonts, no network — and the browser is asked to settle the page with a fixed virtual time budget before it takes the shot:
-
-```bash
-mkdir -p /tmp/a /tmp/b
-MAKEFUN_OUTPUT_DIR=/tmp/a node main.ts
-MAKEFUN_OUTPUT_DIR=/tmp/b node main.ts
-sha256sum /tmp/a/entry.png /tmp/b/entry.png   # identical
-```
-
-The output is a single whole PNG, 1024 × 1024, under 1 MiB.
+A 1024×1024 newspaper poster carrying **100 poster-ready stories for one day**:
+6 hero stories with full summaries, 94 numbered index one-liners, an 8-item UTC
+timeline strip, a drawn world map with 12 pins and a date-check box.
 
 ## Files
 
-- `poster.html` — the front page: masthead, hero story, a four-card grid, a closing strip, footer.
-- `main.ts` — renders `poster.html` to `entry.png` with headless Chromium.
-- `entry.png` — the committed picture, byte-identical to a fresh render.
+| File | Purpose |
+|---|---|
+| `entry.png` | The poster, 1024×1024 RGB PNG, rendered offline and committed to the repo |
+| `poster.html` | The same design and the same 100 stories in HTML/CSS/SVG form, for reading |
+| `main.ts` | Entrypoint: copies `entry.png` into `$MAKEFUN_OUTPUT_DIR` |
+| `LICENSE` | MIT |
 
-## License
+## Entrypoint
 
-[MIT](LICENSE)
+```sh
+MAKEFUN_OUTPUT_DIR=/tmp/out npx tsx main.ts
+```
+
+`main.ts` resolves `entry.png` relative to the program file
+(`fileURLToPath(new URL('.', import.meta.url))`); the working directory is only a
+fallback. It validates the PNG signature, the 1024×1024 dimensions and the 1 MiB
+size cap, then writes the bytes. Standard library only — no Chromium, no
+`execFileSync`, no `child_process`, no network, no clock, no randomness — so the
+output is byte-identical on every run.
+
+## Content
+
+Every line comes from the verified research file for this date (6 heroes +
+94 index one-liners, each with a Tier 1/2 source recorded there). Items that
+failed the verification bar are deliberately absent.
+
+- **Heroes** — APEC Shenzhen trilateral · Crimean Bridge · Iran/Houthis ·
+  Anthropic IPO · ICJ Rohingya ruling · US measles resurgence.
+- **Index** — War & security, Politics & diplomacy, Economy & markets,
+  Technology & science, Health/climate/energy, Culture/sport/society.
+- **Timeline** — 8 UTC timestamps from 00:11 to 19:30.
+- **Map** — 12 pins from New York to Wellington.
+- **Date check** — day 323 of 365, 42 days left in 2026, plus 3 checkable facts.
+
+## Design
+
+- Palette: paper `#F7F2E7`, ink `#1E1C19`, red accent `#B02020`, blue accent `#184484`.
+- Two typefaces only: Gloock (masthead and hero headlines) and Instrument Sans
+  (everything else). Both ship under the SIL Open Font License.
+- Three levels of hierarchy, one focal point (masthead + hero row), primary-to-body
+  ratio well above 3:1.
+- Drawn art only: flags, bridge, missile, chart, scales and cross icons, the
+  world map and the date-check bar are CSS/SVG/Pillow shapes. No photographs and
+  no external images anywhere.
+
+## Reproducing the image
+
+The poster is drawn by `render-1119-v2.py`, which lives outside this repository so
+that the repo holds exactly the six files above. It uses the `prompt-to-design`
+engine with its bundled OFL fonts, sets `np.random.seed(7)`, and re-renders
+byte-identically (verified with `sha256sum`).
